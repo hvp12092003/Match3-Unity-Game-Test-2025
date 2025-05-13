@@ -35,15 +35,10 @@ public class GameManager : MonoBehaviour
 
     public DataItem[] dataItems;
 
-    public float minValueItem;
-    /*
-        public enum iDItem
-        {
-            TYPE_ONE, TYPE_TWO, TYPE_THREE, TYPE_FOUR, TYPE_FIVE, TYPE_SIX, TYPE_SEVEN
-        }*/
+    
+  
     public void Reset()
     {
-        minValueItem = 0;
         dataItems = new DataItem[7];
         for (int i = 0; i < dataItems.Length; i++)
         {
