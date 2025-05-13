@@ -37,81 +37,6 @@ public class GameManager : MonoBehaviour
 
     
   
-    public void Reset()
-    {
-        dataItems = new DataItem[7];
-        for (int i = 0; i < dataItems.Length; i++)
-        {
-            dataItems[i] = new DataItem();
-        }
-        dataItems[0].type = eNormalType.TYPE_ONE;
-        dataItems[1].type = eNormalType.TYPE_TWO;
-        dataItems[2].type = eNormalType.TYPE_THREE;
-        dataItems[3].type = eNormalType.TYPE_FOUR;
-        dataItems[4].type = eNormalType.TYPE_FIVE;
-        dataItems[5].type = eNormalType.TYPE_SIX;
-        dataItems[6].type = eNormalType.TYPE_SEVEN;
-    }
-
-
-    public void handleAmountItem(bool isPlus, string objName)
-    {
-        Debug.Log(objName);
-        switch (objName)
-        {
-            case NewItem.PREFAB_NORMAL_TYPE_ONE:
-                if (isPlus) dataItems[0].amount++;
-                else dataItems[0].amount--; ;
-                break;
-            case NewItem.PREFAB_NORMAL_TYPE_TWO:
-                if (isPlus) dataItems[1].amount++;
-                else dataItems[1].amount--;
-                break;
-            case NewItem.PREFAB_NORMAL_TYPE_THREE:
-                if (isPlus) dataItems[2].amount++;
-                else dataItems[2].amount--;
-                break;
-            case NewItem.PREFAB_NORMAL_TYPE_FOUR:
-                if (isPlus) dataItems[3].amount++;
-                else dataItems[3].amount--;
-                break;
-            case NewItem.PREFAB_NORMAL_TYPE_FIVE:
-                if (isPlus) dataItems[4].amount++;
-                else dataItems[4].amount--;
-                break;
-            case NewItem.PREFAB_NORMAL_TYPE_SIX:
-                if (isPlus) dataItems[5].amount++;
-                else dataItems[5].amount--;
-                break;
-            case NewItem.PREFAB_NORMAL_TYPE_SEVEN:
-                if (isPlus) dataItems[6].amount++;
-                else dataItems[6].amount--;
-                break;
-        }
-        handleOderItem();
-
-    }
-    public void handleOderItem()
-    {
-        DataItem temp = new DataItem();
-        bool done = false;
-
-        while (!done)
-        {
-            done = true;
-            for (int i = 0; i < dataItems.Length - 1; i++)
-            {
-                Debug.Log(dataItems.Length + "/" + i);
-                if (dataItems[i].amount > dataItems[i + 1].amount)
-                {
-                    temp = dataItems[i];
-                    dataItems[i] = dataItems[i + 1];
-                    dataItems[i + 1] = temp;
-                    done = false;
-                }
-            }
-        }
-    }
     private GameSettings m_gameSettings;
 
 
@@ -219,6 +144,81 @@ public class GameManager : MonoBehaviour
 
             Destroy(m_levelCondition);
             m_levelCondition = null;
+        }
+    }
+    public void Reset()
+    {
+        dataItems = new DataItem[7];
+        for (int i = 0; i < dataItems.Length; i++)
+        {
+            dataItems[i] = new DataItem();
+        }
+        dataItems[0].type = eNormalType.TYPE_ONE;
+        dataItems[1].type = eNormalType.TYPE_TWO;
+        dataItems[2].type = eNormalType.TYPE_THREE;
+        dataItems[3].type = eNormalType.TYPE_FOUR;
+        dataItems[4].type = eNormalType.TYPE_FIVE;
+        dataItems[5].type = eNormalType.TYPE_SIX;
+        dataItems[6].type = eNormalType.TYPE_SEVEN;
+    }
+
+
+    public void handleAmountItem(bool isPlus, string objName)
+    {
+        Debug.Log(objName);
+        switch (objName)
+        {
+            case NewItem.PREFAB_NORMAL_TYPE_ONE:
+                if (isPlus) dataItems[0].amount++;
+                else dataItems[0].amount--; ;
+                break;
+            case NewItem.PREFAB_NORMAL_TYPE_TWO:
+                if (isPlus) dataItems[1].amount++;
+                else dataItems[1].amount--;
+                break;
+            case NewItem.PREFAB_NORMAL_TYPE_THREE:
+                if (isPlus) dataItems[2].amount++;
+                else dataItems[2].amount--;
+                break;
+            case NewItem.PREFAB_NORMAL_TYPE_FOUR:
+                if (isPlus) dataItems[3].amount++;
+                else dataItems[3].amount--;
+                break;
+            case NewItem.PREFAB_NORMAL_TYPE_FIVE:
+                if (isPlus) dataItems[4].amount++;
+                else dataItems[4].amount--;
+                break;
+            case NewItem.PREFAB_NORMAL_TYPE_SIX:
+                if (isPlus) dataItems[5].amount++;
+                else dataItems[5].amount--;
+                break;
+            case NewItem.PREFAB_NORMAL_TYPE_SEVEN:
+                if (isPlus) dataItems[6].amount++;
+                else dataItems[6].amount--;
+                break;
+        }
+        handleOderItem();
+
+    }
+    public void handleOderItem()
+    {
+        DataItem temp = new DataItem();
+        bool done = false;
+
+        while (!done)
+        {
+            done = true;
+            for (int i = 0; i < dataItems.Length - 1; i++)
+            {
+                Debug.Log(dataItems.Length + "/" + i);
+                if (dataItems[i].amount > dataItems[i + 1].amount)
+                {
+                    temp = dataItems[i];
+                    dataItems[i] = dataItems[i + 1];
+                    dataItems[i + 1] = temp;
+                    done = false;
+                }
+            }
         }
     }
 }
