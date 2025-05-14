@@ -158,8 +158,8 @@ public class Board
             }
         }
     }
-    // em chưa hiểu hoàn toàn prj này nên em chưa làm được chức năng tạo item khác với 4 item liền kề
-    // nếu được e muốn được thử việc ở công ty mình để học hỏi thêm ạ
+    // em chưa hiểu hoàn toàn prj do yêu cầu cty mình giới hạn thời gian nên em chưa làm được chức năng tạo item khác với 4 item liền kề :((
+    // nếu được e mong muốn được thử việc ở công ty mình để cống hiến và học hỏi phát triển thêm ạ
 
     internal void ExplodeAllItems()
     {
